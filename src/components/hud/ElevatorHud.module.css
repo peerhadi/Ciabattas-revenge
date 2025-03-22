@@ -1,0 +1,145 @@
+.elevatorHud {
+  left: 0;
+  position: absolute;
+  top: 110px;
+  z-index: 1;
+}
+
+.floorSVG {
+  position: absolute;
+  left: calc(4px * var(--elevator-menu-pixel-size));
+  top: calc(6px * var(--elevator-menu-pixel-size));
+}
+
+.elevatorBody {
+  position: absolute;
+  left: calc(1px * var(--elevator-menu-pixel-size));
+  top: calc(24px * var(--elevator-menu-pixel-size));
+  width: calc(56px * var(--elevator-menu-pixel-size));
+  height: calc(99px * var(--elevator-menu-pixel-size));
+}
+
+.elevatorHead {
+  position: absolute;
+  left: calc(1px * var(--elevator-menu-pixel-size));
+  top: calc(1px * var(--elevator-menu-pixel-size));
+  width: calc(56px * var(--elevator-menu-pixel-size));
+  height: calc(22px * var(--elevator-menu-pixel-size));
+}
+
+.button {
+  appearance: none;
+  outline: 0;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.progressBar {
+  position: absolute;
+  left: calc(22px * var(--elevator-menu-pixel-size));
+  top: calc(16px * var(--elevator-menu-pixel-size));
+  width: calc(32px * var(--elevator-menu-pixel-size));
+  height: calc(2px * var(--elevator-menu-pixel-size));
+}
+
+.elevatorMiniMap {
+  position: absolute;
+  left: calc(52px * var(--elevator-menu-pixel-size));
+  top: calc(4px * var(--elevator-menu-pixel-size));
+}
+
+.title {
+  position: absolute;
+  left: calc(22px * var(--elevator-menu-pixel-size));
+  top: calc(9px * var(--elevator-menu-pixel-size));
+}
+
+.button:active {
+  margin-top: 1px;
+}
+
+.button1 {
+  position: absolute;
+  left: calc(4px * var(--elevator-menu-pixel-size));
+  top: calc(20px * var(--elevator-menu-pixel-size));
+}
+
+.button2 {
+  position: absolute;
+  left: calc(21px * var(--elevator-menu-pixel-size));
+  top: calc(20px * var(--elevator-menu-pixel-size));
+}
+
+.button3 {
+  position: absolute;
+  left: calc(38px * var(--elevator-menu-pixel-size));
+  top: calc(20px * var(--elevator-menu-pixel-size));
+}
+
+.button4 {
+  position: absolute;
+  left: calc(4px * var(--elevator-menu-pixel-size));
+  top: calc(37px * var(--elevator-menu-pixel-size));
+}
+
+.button5 {
+  position: absolute;
+  left: calc(21px * var(--elevator-menu-pixel-size));
+  top: calc(37px * var(--elevator-menu-pixel-size));
+}
+
+.button6 {
+  position: absolute;
+  left: calc(38px * var(--elevator-menu-pixel-size));
+  top: calc(37px * var(--elevator-menu-pixel-size));
+}
+
+.button7 {
+  position: absolute;
+  left: calc(4px * var(--elevator-menu-pixel-size));
+  top: calc(54px * var(--elevator-menu-pixel-size));
+}
+
+.button8 {
+  position: absolute;
+  left: calc(21px * var(--elevator-menu-pixel-size));
+  top: calc(54px * var(--elevator-menu-pixel-size));
+}
+
+.button9 {
+  position: absolute;
+  left: calc(38px * var(--elevator-menu-pixel-size));
+  top: calc(54px * var(--elevator-menu-pixel-size));
+}
+
+.createButton {
+  position: absolute;
+  left: calc(4px * var(--elevator-menu-pixel-size));
+  top: calc(71px * var(--elevator-menu-pixel-size));
+}
+
+.titleButton {
+  position: absolute;
+  left: calc(4px * var(--elevator-menu-pixel-size));
+  top: calc(84px * var(--elevator-menu-pixel-size));
+}
+
+.elevatorButtonUp {
+  position: absolute;
+  left: calc(41px * var(--elevator-menu-pixel-size));
+  top: calc(3px * var(--elevator-menu-pixel-size));
+}
+
+.elevatorButtonDown {
+  position: absolute;
+  left: calc(41px * var(--elevator-menu-pixel-size));
+  top: calc(11px * var(--elevator-menu-pixel-size));
+}
+
+@media (max-height: 825px) {
+  .elevatorHud {
+    top: 25px;
+  }
+}

@@ -1,0 +1,17 @@
+.fullScreenContainer {
+  align-items: center;
+  display: flex;
+  inset: 0;
+  justify-content: center;
+  position: absolute;
+}
+
+.TopHud_topHud___mgLS{
+  margin-top: 5px;
+}
+
+.gameScreen {
+  width: var(--game-viewport-width);
+  height: var(--game-viewport-height);
+  transform: scale(var(--pixel-size));
+}

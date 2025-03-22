@@ -1,0 +1,26 @@
+{
+  "name": "ciabattas-revenge",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "howler": "^2.2.4",
+    "nes-zustand": "^0.2.2",
+    "next": "^15.2.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "eslint": "^9",
+    "eslint-config-next": "15.1.7",
+    "postcss": "^8",
+    "recoil": "^0.7.7",
+    "tailwindcss": "^3.4.1"
+  }
+}

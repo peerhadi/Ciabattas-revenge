@@ -1,0 +1,12 @@
+.borderPath {
+  animation: animation_glow .8s steps(4) infinite alternate-reverse
+}
+
+@keyframes animation_glow {
+  0%{
+    stroke: #fff
+  }
+100%{
+  stroke: #fbf005;
+}
+}

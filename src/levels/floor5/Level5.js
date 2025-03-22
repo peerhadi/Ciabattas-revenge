@@ -1,0 +1,501 @@
+const data = {
+  title: "Floor 5-5",
+  musicTrack: "MUSIC_WORLD1",
+  theme: "YELLOW",
+  tilesWidth: 15,
+  tilesHeight: 15,
+  placements: [
+    {
+      type: "HERO",
+      x: 8,
+      y: 6,
+    },
+    {
+      type: "GOAL",
+      x: 7,
+      y: 6,
+    },
+    {
+      type: "FIRE",
+      x: 7,
+      y: 4,
+    },
+    {
+      type: "FIRE",
+      x: 6,
+      y: 4,
+    },
+    {
+      type: "FIRE",
+      x: 5,
+      y: 6,
+    },
+    {
+      type: "FIRE",
+      x: 5,
+      y: 7,
+    },
+    {
+      type: "FIRE",
+      x: 6,
+      y: 8,
+    },
+    {
+      type: "FIRE",
+      x: 8,
+      y: 8,
+    },
+    {
+      type: "FIRE",
+      x: 10,
+      y: 5,
+    },
+    {
+      type: "FIRE",
+      x: 10,
+      y: 6,
+    },
+    {
+      type: "FIRE",
+      x: 9,
+      y: 4,
+    },
+    {
+      type: "FIRE",
+      x: 9,
+      y: 8,
+    },
+    {
+      type: "FIRE",
+      x: 10,
+      y: 7,
+    },
+    {
+      type: "WATER",
+      x: 9,
+      y: 1,
+    },
+    {
+      type: "WATER",
+      x: 10,
+      y: 1,
+    },
+    {
+      type: "WATER",
+      x: 11,
+      y: 1,
+    },
+    {
+      type: "WATER",
+      x: 12,
+      y: 1,
+    },
+    {
+      type: "WATER",
+      x: 12,
+      y: 2,
+    },
+    {
+      type: "WATER",
+      x: 12,
+      y: 3,
+    },
+    {
+      type: "WATER",
+      x: 11,
+      y: 3,
+    },
+    {
+      type: "WATER",
+      x: 10,
+      y: 3,
+    },
+    {
+      type: "WATER",
+      x: 11,
+      y: 2,
+    },
+    {
+      type: "WATER",
+      x: 10,
+      y: 2,
+    },
+    {
+      type: "WATER",
+      x: 9,
+      y: 2,
+    },
+    {
+      type: "WATER",
+      x: 9,
+      y: 3,
+    },
+    {
+      type: "WALL",
+      x: 5,
+      y: 9,
+    },
+    {
+      type: "WALL",
+      x: 8,
+      y: 9,
+    },
+    {
+      type: "WALL",
+      x: 8,
+      y: 10,
+    },
+    {
+      type: "WALL",
+      x: 9,
+      y: 10,
+    },
+    {
+      type: "WALL",
+      x: 10,
+      y: 10,
+    },
+    {
+      type: "WALL",
+      x: 5,
+      y: 11,
+    },
+    {
+      type: "WALL",
+      x: 5,
+      y: 12,
+    },
+    {
+      type: "WALL",
+      x: 10,
+      y: 11,
+    },
+    {
+      type: "WALL",
+      x: 10,
+      y: 13,
+    },
+    {
+      type: "LOCK",
+      x: 10,
+      y: 12,
+      color: "GREEN",
+    },
+    {
+      type: "WATER_PICKUP",
+      x: 7,
+      y: 13,
+    },
+    {
+      type: "FLOUR",
+      x: 11,
+      y: 2,
+    },
+    {
+      type: "FLOUR",
+      x: 3,
+      y: 4,
+    },
+    {
+      type: "FLOUR",
+      x: 14,
+      y: 7,
+    },
+    {
+      type: "FLOUR",
+      x: 2,
+      y: 14,
+    },
+    {
+      type: "FLOUR",
+      x: 14,
+      y: 15,
+    },
+    {
+      type: "WALL",
+      x: 4,
+      y: 14,
+    },
+    {
+      type: "WALL",
+      x: 4,
+      y: 15,
+    },
+    {
+      type: "WALL",
+      x: 3,
+      y: 11,
+    },
+    {
+      type: "WALL",
+      x: 2,
+      y: 11,
+    },
+    {
+      type: "WALL",
+      x: 4,
+      y: 12,
+    },
+    {
+      type: "SWITCH_DOOR",
+      x: 5,
+      y: 13,
+      isRaised: true,
+    },
+    {
+      type: "SWITCH_DOOR",
+      x: 1,
+      y: 11,
+      isRaised: true,
+    },
+    {
+      type: "SWITCH",
+      x: 14,
+      y: 1,
+    },
+    {
+      type: "FIRE",
+      x: 11,
+      y: 5,
+    },
+    {
+      type: "FIRE",
+      x: 12,
+      y: 5,
+    },
+    {
+      type: "FIRE",
+      x: 13,
+      y: 5,
+    },
+    {
+      type: "FIRE",
+      x: 13,
+      y: 6,
+    },
+    {
+      type: "FIRE",
+      x: 13,
+      y: 7,
+    },
+    {
+      type: "FIRE",
+      x: 13,
+      y: 8,
+    },
+    {
+      type: "FIRE",
+      x: 13,
+      y: 10,
+    },
+    {
+      type: "FIRE",
+      x: 14,
+      y: 9,
+    },
+    {
+      type: "WALL",
+      x: 11,
+      y: 13,
+    },
+    {
+      type: "WALL",
+      x: 12,
+      y: 13,
+    },
+    {
+      type: "WALL",
+      x: 12,
+      y: 14,
+    },
+    {
+      type: "WALL",
+      x: 12,
+      y: 15,
+    },
+    {
+      type: "GROUND_ENEMY",
+      x: 4,
+      y: 9,
+      initialDirection: "LEFT",
+    },
+    {
+      type: "FIRE",
+      x: 5,
+      y: 4,
+    },
+    {
+      type: "KEY",
+      x: 2,
+      y: 2,
+      color: "GREEN",
+    },
+    {
+      type: "CONVEYOR",
+      x: 5,
+      y: 3,
+      direction: "LEFT",
+    },
+    {
+      type: "CONVEYOR",
+      x: 5,
+      y: 2,
+      direction: "LEFT",
+    },
+    {
+      type: "CONVEYOR",
+      x: 5,
+      y: 1,
+      direction: "LEFT",
+    },
+    {
+      type: "CONVEYOR",
+      x: 6,
+      y: 1,
+      direction: "LEFT",
+    },
+    {
+      type: "CONVEYOR",
+      x: 6,
+      y: 2,
+      direction: "LEFT",
+    },
+    {
+      type: "CONVEYOR",
+      x: 6,
+      y: 3,
+      direction: "LEFT",
+    },
+    {
+      type: "WALL",
+      x: 1,
+      y: 6,
+    },
+    {
+      type: "WALL",
+      x: 1,
+      y: 7,
+    },
+    {
+      type: "WALL",
+      x: 2,
+      y: 7,
+    },
+    {
+      type: "WALL",
+      x: 3,
+      y: 7,
+    },
+    {
+      type: "CONVEYOR",
+      x: 4,
+      y: 7,
+      direction: "UP",
+    },
+    {
+      type: "LOCK",
+      x: 5,
+      y: 5,
+      color: "BLUE",
+    },
+    {
+      type: "KEY",
+      x: 13,
+      y: 9,
+      color: "BLUE",
+    },
+    {
+      type: "SWITCH_DOOR",
+      x: 15,
+      y: 9,
+      isRaised: false,
+    },
+    {
+      type: "FLYING_ENEMY",
+      x: 15,
+      y: 10,
+      initialDirection: "LEFT",
+    },
+    {
+      type: "FLOUR",
+      x: 2,
+      y: 9,
+    },
+    {
+      type: "WALL",
+      x: 3,
+      y: 2,
+    },
+    {
+      type: "WALL",
+      x: 1,
+      y: 4,
+    },
+    {
+      type: "ICE",
+      x: 7,
+      y: 15,
+    },
+    {
+      type: "ICE",
+      x: 8,
+      y: 15,
+    },
+    {
+      type: "ICE",
+      x: 9,
+      y: 15,
+    },
+    {
+      type: "ICE",
+      x: 5,
+      y: 15,
+      corner: "BOTTOM_LEFT",
+    },
+    {
+      type: "ICE",
+      x: 6,
+      y: 15,
+    },
+    {
+      type: "ICE",
+      x: 11,
+      y: 14,
+      corner: "TOP_RIGHT",
+    },
+    {
+      type: "FIRE",
+      x: 10,
+      y: 14,
+    },
+    {
+      type: "ICE",
+      x: 10,
+      y: 15,
+    },
+    {
+      type: "ICE",
+      x: 11,
+      y: 15,
+      corner: "BOTTOM_RIGHT",
+    },
+    {
+      type: "ICE_PICKUP",
+      x: 13,
+      y: 15,
+    },
+    {
+      type: "GROUND_ENEMY",
+      x: 14,
+      y: 12,
+      initialDirection: "LEFT",
+    },
+    {
+      type: "FLOUR",
+      x: 11,
+      y: 14,
+    },
+  ],
+};
+
+export default data;

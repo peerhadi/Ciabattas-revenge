@@ -1,0 +1,19 @@
+.floorButton {
+  display: flex;
+  align-items: center;
+}
+
+.quietButton {
+  appearance: none;
+  outline: 0;
+  padding: 0;
+  background: none;
+  display: flex;
+  border: none;
+  cursor: pointer;
+}
+
+.quietButton:active {
+  position: relative;
+  top: 1px;
+}

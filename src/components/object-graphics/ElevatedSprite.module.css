@@ -1,0 +1,24 @@
+.elevatedSprite {
+  position: relative;
+}
+
+.bodyContainer {
+  position: absolute;
+  left: 0;
+  top: 0
+}
+
+.hover {
+  animation: TileElevated .7s steps(3) infinite alternate-reverse;
+}
+
+@keyframes TileElevated {
+  0% {
+    transform: translateY(-1px);
+  }
+
+  100% {
+    transform: translateY(-4px);
+  }
+
+}
