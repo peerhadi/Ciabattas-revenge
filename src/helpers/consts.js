@@ -1,6 +1,12 @@
+
+const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH || '';
+
+export const imagePath = (path) => {
+  return `${BASE_PATH}${path}`;
+};
 export const CELL_SIZE = 16;
 export const Z_INDEX_LAYER_SIZE = 10;
-export const SPRITE_SHEET_SRC = '/ciabattas-revenge-sprites.png'
+export const SPRITE_SHEET_SRC = imagePath('/ciabattas-revenge-sprites.png')
 
 export const PLACEMENT_TYPE_HERO = "HERO";
 export const PLACEMENT_TYPE_GOAL = "GOAL";
@@ -124,3 +130,4 @@ export const ICE_CORNERS = {
   BOTTOM_LEFT: "BOTTOM_LEFT",
   BOTTOM_RIGHT: "BOTTOM_RIGHT"
 }
+

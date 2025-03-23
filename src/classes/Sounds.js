@@ -1,3 +1,4 @@
+import { imagePath } from '@/helpers/consts';
 import { Howl } from 'howler'
 
 export class Sounds {
@@ -10,7 +11,7 @@ export class Sounds {
     Object.keys(SFX_FILES).forEach(key => {
       const file = SFX_FILES[key];
       this.howls[key] = new Howl({
-        src: [file]
+        src: imagePath([file])
       })
     })
   }

@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import { CELL_SIZE } from "../../helpers/consts";
+import { CELL_SIZE, imagePath } from "../../helpers/consts";
 import useStore from '../../atoms/spriteSheetImageAtom';
 
 function Sprite({ frameCoord, size = 16 }) {
