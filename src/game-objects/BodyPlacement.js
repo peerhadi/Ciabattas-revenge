@@ -1,9 +1,11 @@
 import { Placement } from "./Placement";
 import { BODY_SKINS, DIRECTION_LEFT, DIRECTION_RIGHT, directionUpdateMap, PLACEMENT_TYPE_CELEBRATION, PLACEMENT_TYPE_ICE, Z_INDEX_LAYER_SIZE } from "@/helpers/consts";
 import { Collision } from "@/classes/Collision";
-import soundsManager, { SFX, SFX_FILES } from "@/classes/Sounds";
-
+import soundsManager, { SFX } from "@/classes/Sounds";
 export class BodyPlacement extends Placement {
+  constructor(properties, level) {
+    super(properties, level)
+  }
   updateFacingDirection() {
     if (this.movingPixelsDirection === DIRECTION_LEFT || this.movingPixelsDirection === DIRECTION_RIGHT) {
       this.spriteFacingDirection = this.movingPixelsDirection
@@ -51,11 +53,17 @@ export class BodyPlacement extends Placement {
     this.tickMovingPixelProgress();
     this.tickAttemptAiMove();
   }
+  handleEnemyCollideWithHero() {
+    return null
+  }
   tickMovingPixelProgress() {
+
     if (this.movingPixelsRemaining === 0) {
       return;
     }
     this.movingPixelsRemaining -= this.travelPixelPerFrame;
+
+
     if (this.movingPixelsRemaining <= 0) {
       this.movingPixelsRemaining = 0;
       this.onDoneMoving();
@@ -74,7 +82,7 @@ export class BodyPlacement extends Placement {
     return null
   }
 
-  onAutoMovement(direction) {
+  onAutoMovement(_direction) {
     return null
   }
 
@@ -101,7 +109,7 @@ export class BodyPlacement extends Placement {
 
     const autoMovePlacement = collision.withPlacementMovesBody();
     if (autoMovePlacement) {
-      if(autoMovePlacement.type === PLACEMENT_TYPE_ICE){
+      if (autoMovePlacement.type === PLACEMENT_TYPE_ICE) {
         soundsManager.playSfx('ICE')
       }
       this.onAutoMovement(autoMovePlacement.autoMovesBodyOnCollide(this))
@@ -111,7 +119,7 @@ export class BodyPlacement extends Placement {
       this.level.switchAllDoors();
     }
 
-    if(collision.withStealsInventory()){
+    if (collision.withStealsInventory()) {
       soundsManager.playSfx('THUMP')
       this.level.stealInventory();
     }
@@ -135,15 +143,15 @@ export class BodyPlacement extends Placement {
       soundsManager.playSfx(SFX.WIN)
     }
   }
-  
-  takesDamage(){
+
+  takesDamage() {
     return null
   }
 
 
   getYTranslate(PIXELS_TO_JUMP = 0) {
     if (this.movingPixelsRemaining === 0 || this.skin !== BODY_SKINS.NORMAL) {
-      return PIXELS_TO_JUMP 
+      return PIXELS_TO_JUMP
     }
     const PIXELS_FROM_END = 2;
     if (

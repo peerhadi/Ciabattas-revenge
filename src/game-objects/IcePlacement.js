@@ -86,7 +86,7 @@ export class IcePlacement extends Placement {
     if (possibleRedirects) {
       return possibleRedirects[body.movingPixelsDirection]
     }
-
+    
     return body.movingPixelsDirection
   }
   changesHeroSkinOnCollide() {

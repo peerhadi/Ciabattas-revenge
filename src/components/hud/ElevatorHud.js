@@ -26,18 +26,18 @@ export default function ElevatorHud({ level }) {
     const levelId = "Level" + ((parseInt(floor[1]) - 1) * 9 + buttonNumber);
     if (floor != 'F' + level.title[6] || (
       level.music === SFX.MUSIC_BATTLE &&
-      Levels[levelId].musicTrack != SFX.MUSIC_BATTLE 
+      Levels[levelId].musicTrack != SFX.MUSIC_BATTLE
     ) || (
-      level.music != SFX.MUSIC_BATTLE &&
-      Levels[levelId].musicTrack === SFX.MUSIC_BATTLE 
-    ))
+        level.music != SFX.MUSIC_BATTLE &&
+        Levels[levelId].musicTrack === SFX.MUSIC_BATTLE
+      ))
       soundsManager.stopSfx(level.music)
+    window.localStorage.setItem('currentLevelId', levelId)
     setCurrentId(levelId);
   };
   const isCompleted = (buttonNumber) => {
     const completedLevels = JSON.parse(window.localStorage.getItem('completedLevels'));
     const levelId = "Level" + ((parseInt(floor[1]) - 1) * 9 + buttonNumber);
-    console.log(JSON.parse(window.localStorage.getItem('completedLevels')).length,)
     return completedLevels.includes(levelId);
   }
   const progress = `${(JSON.parse(window.localStorage.getItem('completedLevels')).length / 45) * 100}`

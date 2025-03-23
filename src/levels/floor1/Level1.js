@@ -1,6 +1,7 @@
 const level = {
   title: "Floor 1-1",
   musicTrack: "MUSIC_WORLD1",
+  story: "FLOOR ONE - BOTTOM OF THE CORPORATE LADDER",
   theme: "BLUE",
   tilesWidth: 9,
   tilesHeight: 3,

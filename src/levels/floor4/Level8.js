@@ -88,25 +88,7 @@ const data = {
       y: 12,
       isRaised: true
     },
-    {
-      type: "SWITCH_DOOR",
-      x: 10,
-      y: 13,
-      isRaised: true
-    },
-    {
-      type: "SWITCH_DOOR",
-      x: 11,
-      y: 13,
-      isRaised: true
-    },
-    {
-      type: "SWITCH_DOOR",
-      x: 9,
-      y: 13,
-      isRaised: true
-    },
-    {
+        {
       type: "SWITCH_DOOR",
       x: 11,
       y: 12,
@@ -128,24 +110,6 @@ const data = {
       type: "SWITCH_DOOR",
       x: 1,
       y: 12,
-      isRaised: true
-    },
-    {
-      type: "SWITCH_DOOR",
-      x: 3,
-      y: 13,
-      isRaised: true
-    },
-    {
-      type: "SWITCH_DOOR",
-      x: 1,
-      y: 13,
-      isRaised: true
-    },
-    {
-      type: "SWITCH_DOOR",
-      x: 2,
-      y: 13,
       isRaised: true
     },
     {
@@ -223,12 +187,6 @@ const data = {
     {
       type: "SWITCH_DOOR",
       x: 4,
-      y: 13,
-      isRaised: true
-    },
-    {
-      type: "SWITCH_DOOR",
-      x: 4,
       y: 12,
       isRaised: true
     },
@@ -236,18 +194,6 @@ const data = {
       type: "SWITCH_DOOR",
       x: 5,
       y: 12,
-      isRaised: true
-    },
-    {
-      type: "SWITCH_DOOR",
-      x: 5,
-      y: 13,
-      isRaised: true
-    },
-    {
-      type: "SWITCH_DOOR",
-      x: 6,
-      y: 13,
       isRaised: true
     },
     {
@@ -260,18 +206,6 @@ const data = {
       type: "SWITCH_DOOR",
       x: 7,
       y: 12,
-      isRaised: true
-    },
-    {
-      type: "SWITCH_DOOR",
-      x: 7,
-      y: 13,
-      isRaised: true
-    },
-    {
-      type: "SWITCH_DOOR",
-      x: 8,
-      y: 13,
       isRaised: true
     },
     {
@@ -373,12 +307,6 @@ const data = {
       type: "SWITCH_DOOR",
       x: 12,
       y: 12,
-      isRaised: true
-    },
-    {
-      type: "SWITCH_DOOR",
-      x: 12,
-      y: 13,
       isRaised: true
     },
     {
@@ -637,11 +565,11 @@ const data = {
       y: 8,
       isRaised: false
     },
-    //{
-    //  type: "CLOWN_DEFENSE_PICKUP",
-    //  x: 11,
-    //  y: 5
-    //},
+    {
+      type: "CLOWN_DEFENSE_PICKUP",
+      x: 11,
+      y: 5
+    },
     {
       type: "SWITCH_DOOR",
       x: 2,

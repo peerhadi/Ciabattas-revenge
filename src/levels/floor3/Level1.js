@@ -1,6 +1,7 @@
 const data = {
   title: "Floor 3-1",
   musicTrack: "MUSIC_WORLD3",
+  story: "FLOOR THREE - THE SLIPPERY SLOPE OF GREED",
   theme: "PINK",
   tilesWidth: 11,
   tilesHeight: 5,

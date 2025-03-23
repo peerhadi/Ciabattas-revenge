@@ -1,6 +1,7 @@
 const data = {
   title: "Floor 2-1",
   musicTrack: "MUSIC_WORLD2",
+  story: "FLOOR TWO - CAMPUS GARDENS",
   theme: "GREEN",
   tilesWidth: 11,
   tilesHeight: 6,

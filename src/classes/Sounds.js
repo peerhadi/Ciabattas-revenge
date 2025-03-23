@@ -42,7 +42,6 @@ export class Sounds {
   }
   playSfx(key) {
     const howl = this.howls[key];
-    console.log(howl.playing())
     if (!howl.playing()) {
       howl.volume(this.sfxVolume);
       howl.play();

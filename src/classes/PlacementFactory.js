@@ -1,6 +1,8 @@
 import { CelebrationPlacement } from "@/game-objects/CelebrationPlacement";
 import { CiabattaPlacement } from "@/game-objects/CiabattaPlacement";
+import { ClownDefensePlacement } from "@/game-objects/ClownDefensePlacement";
 import { ConveyorPlacement } from "@/game-objects/ConveyorPlacement";
+import { DeadClownPlacement } from "@/game-objects/DeadClownPlacement";
 import { DoorSwitchPlacement } from "@/game-objects/DoorSwitchPlacement";
 import { FirePickupPlacement } from "@/game-objects/FirePickupPlacement";
 import { FirePlacement } from "@/game-objects/FirePlacement";
@@ -20,7 +22,7 @@ import { ThiefPlacement } from "@/game-objects/TheifPlacement";
 import { WallPlacement } from "@/game-objects/WallPlacement";
 import { WaterPickupPlacement } from "@/game-objects/WaterPickupPlacement";
 import { WaterPlacement } from "@/game-objects/WaterPlacement";
-import { PLACEMENT_TYPE_HERO, PLACEMENT_TYPE_GOAL, PLACEMENT_TYPE_WALL, PLACEMENT_TYPE_FLOUR, PLACEMENT_TYPE_CELEBRATION, PLACEMENT_TYPE_KEY, PLACEMENT_TYPE_LOCK, PLACEMENT_TYPE_WATER, PLACEMENT_TYPE_WATER_PICKUP, PLACEMENT_TYPE_GROUND_ENEMY, PLACEMENT_TYPE_FLYING_ENEMY, PLACEMENT_TYPE_ROAMING_ENEMY, PLACEMENT_TYPE_CONVEYOR, PLACEMENT_TYPE_ICE, PLACEMENT_TYPE_ICE_PICKUP, PLACEMENT_TYPE_FIRE, PLACEMENT_TYPE_FIRE_PICKUP, PLACEMENT_TYPE_SWITCH, PLACEMENT_TYPE_SWITCH_DOOR, PLACEMENT_TYPE_TELEPORT, PLACEMENT_TYPE_THIEF, PLACEMENT_TYPE_CIABATTA } from "@/helpers/consts";
+import { PLACEMENT_TYPE_HERO, PLACEMENT_TYPE_GOAL, PLACEMENT_TYPE_WALL, PLACEMENT_TYPE_FLOUR, PLACEMENT_TYPE_CELEBRATION, PLACEMENT_TYPE_KEY, PLACEMENT_TYPE_LOCK, PLACEMENT_TYPE_WATER, PLACEMENT_TYPE_WATER_PICKUP, PLACEMENT_TYPE_GROUND_ENEMY, PLACEMENT_TYPE_FLYING_ENEMY, PLACEMENT_TYPE_ROAMING_ENEMY, PLACEMENT_TYPE_CONVEYOR, PLACEMENT_TYPE_ICE, PLACEMENT_TYPE_ICE_PICKUP, PLACEMENT_TYPE_FIRE, PLACEMENT_TYPE_FIRE_PICKUP, PLACEMENT_TYPE_SWITCH, PLACEMENT_TYPE_SWITCH_DOOR, PLACEMENT_TYPE_TELEPORT, PLACEMENT_TYPE_THIEF, PLACEMENT_TYPE_CIABATTA, PLACEMENT_TYPE_CLOWN_DEFENSE_PICKUP, PLACEMENT_TYPE_DEAD_CLOWN } from "@/helpers/consts";
 const placementTypeClassMap = {
   [PLACEMENT_TYPE_HERO]: HeroPlacement,
   [PLACEMENT_TYPE_GOAL]: GoalPlacement,
@@ -44,6 +46,8 @@ const placementTypeClassMap = {
   [PLACEMENT_TYPE_TELEPORT]: TeleportPlacement,
   [PLACEMENT_TYPE_THIEF]: ThiefPlacement,
   [PLACEMENT_TYPE_CIABATTA]: CiabattaPlacement,
+  [PLACEMENT_TYPE_CLOWN_DEFENSE_PICKUP]: ClownDefensePlacement,
+  [PLACEMENT_TYPE_DEAD_CLOWN]: DeadClownPlacement
 }
 class PlacementFactory {
   createPlacement(config, level) {

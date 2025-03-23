@@ -139,7 +139,7 @@ export const ElevatorButtonSvg = ({ isActive, floor, number, isCompleted }) => {
       }}>
         <PixelNumber number={number} toScale />
       </div>
-    {isCompleted && <SmallCheckmarkSvg />}
+      {isCompleted && <SmallCheckmarkSvg />}
     </>
   );
 };

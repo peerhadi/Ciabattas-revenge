@@ -19,6 +19,7 @@ const heroSkinMap = {
 export class HeroPlacement extends BodyPlacement {
   constructor(properties, level) {
     super(properties, level);
+
     this.canCollectItems = true;
     this.canCompleteLevel = true;
     this.interactsWithGround = true;
@@ -37,12 +38,12 @@ export class HeroPlacement extends BodyPlacement {
       return;
     }
 
-    if(this.skin === BODY_SKINS.WATER){
+    if (this.skin === BODY_SKINS.WATER) {
 
-    const collision = this.getCollisionAtNextPosition(direction);
-    if (!collision.withChangesHeroSkin()) {
-      this.skin = BODY_SKINS.NORMAL
-    }
+      const collision = this.getCollisionAtNextPosition(direction);
+      if (!collision.withChangesHeroSkin()) {
+        this.skin = BODY_SKINS.NORMAL
+      }
     }
 
     this.movingPixelsRemaining = 16;
@@ -50,8 +51,8 @@ export class HeroPlacement extends BodyPlacement {
     this.updateFacingDirection();
     this.updateWalkFrame()
   }
-  
-  takesDamage(deathType){
+
+  takesDamage(deathType) {
     return this.level.setDeathOutcome(deathType)
   }
 
@@ -61,14 +62,14 @@ export class HeroPlacement extends BodyPlacement {
     if (this.level.deathOutcome) {
       return heroSkinMap[BODY_SKINS.DEATH][index]
     }
-  
+
     if (this.movingPixelsRemaining > 0 && this.skin === BODY_SKINS.NORMAL) {
       const walkKey = this.spriteWalkFrame === 0 ? HERO_RUN_1 : HERO_RUN_2;
       return heroSkinMap[walkKey][index]
     }
     return heroSkinMap[this.skin][index]
   }
-  onAutoMovement(direction){
+  onAutoMovement(direction) {
     this.controllerMoveRequested(direction)
   }
   zIndex() {

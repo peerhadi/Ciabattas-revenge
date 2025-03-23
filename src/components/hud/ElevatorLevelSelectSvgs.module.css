@@ -3,10 +3,11 @@
 }
 
 @keyframes animation_glow {
-  0%{
+  0% {
     stroke: #fff
   }
-100%{
-  stroke: #fbf005;
-}
+
+  100% {
+    stroke: #fbf005;
+  }
 }

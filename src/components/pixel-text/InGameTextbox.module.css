@@ -1,0 +1,40 @@
+.textbox {
+  position: absolute;
+  background: #000;
+  left: 0;
+  right: 0;
+  height: calc(42px * var(--pixel-size));
+  bottom: 0;
+  z-index: 99;
+  padding: calc(4px * var(--pixel-size));
+  border-top: calc(1px * var(--pixel-size)) solid rgba(255, 255, 255, 0.2);
+  transform: translate3d(0, 100%, 0);
+  animation: animation_rise 0.4s forwards 1.6s;
+  transition: bottom 0.4s;
+}
+
+.out {
+  bottom: calc(-42px * var(--pixel-size));
+}
+
+@keyframes animation_rise {
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.textboxInner {
+  display: flex;
+}
+
+.characterAvatar {
+  width: calc(48px * var(--pixel-size));
+  height: calc(48px * var(--pixel-size))
+}
+
+.scaledSprite {
+  position: relative;
+  top: calc(-16px * var(--pixel-size));
+  transform-origin: top left;
+  transform: scale(var(--pixel-size));
+}

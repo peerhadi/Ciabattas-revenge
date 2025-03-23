@@ -4,8 +4,16 @@ export class Inventory {
   }
 
   has(key) {
-    return Boolean(this.inventoryMap.has(key))
+    return Boolean(this.inventoryMap.get(key))
   }
+  remove(key) {
+    if (!key) {
+      console.warn("WARNING! TRYING TO REMOVE FALSY KEY TO INVENTORY", key);
+      return
+    }
+    this.inventoryMap.set(key, false)
+  }
+
 
   add(key) {
     if (!key) {

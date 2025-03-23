@@ -1,4 +1,4 @@
-import { DIRECTION_DOWN, DIRECTION_LEFT, DIRECTION_RIGHT, DIRECTION_UP } from "@/helpers/consts";
+import { DIRECTION_DOWN, DIRECTION_LEFT, DIRECTION_RIGHT, DIRECTION_UP, PLACEMENT_TYPE_CLOWN_DEFENSE_PICKUP } from "@/helpers/consts";
 import { TILES } from "@/helpers/tiles";
 import Body from "@/components/object-graphics/Body";
 import { BodyPlacement } from "./BodyPlacement";
@@ -28,6 +28,14 @@ export default class GroundEnemyPlacement extends BodyPlacement {
     const xDiff = Math.abs(myX - heroX)
     const yDiff = Math.abs(myY - heroY)
     if (xDiff <= 2 && yDiff <= 2) {
+      if (this.type === 'ROAMING_ENEMY') {
+        if (this.level.inventory.has(PLACEMENT_TYPE_CLOWN_DEFENSE_PICKUP)) {
+          if(xDiff === 0 && yDiff === 0){
+            this.handleEnemyCollideWithHero()
+          }
+          return;
+        }
+      }
       this.level.setDeathOutcome(this.type)
     }
   }

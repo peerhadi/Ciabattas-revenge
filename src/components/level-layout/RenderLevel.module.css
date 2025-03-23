@@ -1,0 +1,41 @@
+.fullScreenContainer {
+  align-items: center;
+  display: flex;
+  inset: 0;
+  justify-content: center;
+  height: 100vh;
+  position: absolute;
+}
+
+.nextGameScreen {
+  width: calc(100vw / var(--pixel-size));
+  height: calc(100vw / var(--pixel-size));
+  position: absolute;
+  background-color: #030b1e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: scale(var(--pixel-size));
+  gap: 0.3;
+  animation: slide 0.7s linear;
+}
+
+.TopHud_topHud___mgLS {
+  margin-top: 5px;
+}
+
+@keyframes slide {
+  0% {
+    margin-left: -200vw;
+  }
+
+  100% {
+    margin-left: 0px;
+  }
+}
+
+.gameScreen {
+  width: var(--game-viewport-width);
+  height: var(--game-viewport-height);
+  transform: scale(var(--pixel-size));
+}

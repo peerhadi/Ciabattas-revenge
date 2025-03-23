@@ -7,8 +7,7 @@ import { Inventory } from "./Inventory";
 import { LevelAnimatedFrames } from "./LevelAnimatedFrames";
 import { Camera } from "./Camera";
 import { Clock } from "./Clock";
-import useStore from "@/atoms/spriteSheetImageAtom";
-import soundsManager, { SFX } from "./Sounds";
+import soundsManager from "./Sounds";
 
 export class LevelState {
   constructor(levelId, onEmit) {
@@ -18,7 +17,7 @@ export class LevelState {
 
     this.directionControls = new DirectionControls();
     this.music = Levels[this.id].musicTrack
-    console.log(this.music)
+
     document.addEventListener('click', soundsManager.playSfx(this.music))
 
     this.start()
@@ -41,11 +40,14 @@ export class LevelState {
     this.camera = new Camera(this)
     this.clock = new Clock(90, this)
     this.startGameLoop()
+    this.running = !(Boolean(Levels[this.id].story));
+    console.log(Levels[this.id].story)
   }
   startGameLoop() {
     this.gameLoop?.stop();
     this.gameLoop = new GameLoop(() => {
-      this.tick();
+      if (this.running)
+        this.tick();
     })
   }
 
@@ -108,8 +110,11 @@ export class LevelState {
     if (!window.localStorage.getItem("completedLevels")) {
       window.localStorage.setItem("completedLevels", JSON.stringify([]))
     }
-    const completedLevels = [...JSON.parse(window.localStorage.getItem("completedLevels")), this.id];
-    window.localStorage.setItem('completedLevels', JSON.stringify(completedLevels))
+    if (!JSON.parse(window.localStorage.getItem("completedLevels")).includes(this.id)) {
+      const completedLevels = [...JSON.parse(window.localStorage.getItem("completedLevels")), this.id];
+      completedLevels.sort((x, y) => parseInt(x.substring(6, 9)) - parseInt(y.substring(6, 9)));
+      window.localStorage.setItem('completedLevels', JSON.stringify(completedLevels))
+    }
     this.isCompleted = true;
     this.gameLoop.stop()
   }
@@ -128,11 +133,17 @@ export class LevelState {
       inventory: this.inventory,
       title: Levels[this.id].title,
       music: this.music,
+      story: Levels[this.id].story,
+      closeStory: () => {
+        this.closeStory();
+      },
       restart: () => {
-
         this.start()
       }
     }
+  }
+  closeStory() {
+    this.running = true;
   }
 
   destroy() {

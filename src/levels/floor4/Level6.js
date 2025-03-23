@@ -305,11 +305,11 @@ const data = {
       x: 6,
       y: 4,
     },
-    //{
-    //  type: "CLOWN_DEFENSE_PICKUP",
-    //  x: 4,
-    //  y: 4
-    //}
+    {
+      type: "CLOWN_DEFENSE_PICKUP",
+      x: 4,
+      y: 4
+    }
   ]
 };
 

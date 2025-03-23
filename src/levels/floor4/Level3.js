@@ -338,12 +338,6 @@ const data = {
       color: "BLUE",
     },
     {
-      type: "KEY",
-      x: 14,
-      y: 14,
-      color: "BLUE",
-    },
-    {
       type: "CONVEYOR",
       x: 8,
       y: 2,
@@ -660,13 +654,19 @@ const data = {
       type: "ROAMING_ENEMY",
       x: 5,
       y: 9,
-     
+
     },
     {
       type: "ROAMING_ENEMY",
       x: 11,
       y: 9,
-      
+
+    },
+    {
+      type: "KEY",
+      x: 14,
+      y: 14,
+      color: "BLUE",
     },
   ],
 };

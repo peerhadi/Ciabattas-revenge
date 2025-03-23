@@ -533,11 +533,11 @@ const data = {
       y: 3,
       color: "GREEN"
     },
-    //{
-    //  type: "CLOWN_DEFENSE_PICKUP",
-    //  x: 7,
-    //  y: 11
-    //},
+    {
+      type: "CLOWN_DEFENSE_PICKUP",
+      x: 7,
+      y: 11
+    },
     {
       type: "WALL",
       x: 2,

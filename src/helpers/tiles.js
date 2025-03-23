@@ -4,6 +4,7 @@ export const TILES = {
   FLOUR: "2x3",
   FIRE_PICKUP: "3x3",
   ICE_PICKUP: "4x3",
+  CLOWN_DEFENSE_PICKUP: "14x3",
   WATER_PICKUP: "5x3",
   BULLET_PICKUP: "4x9",
   BULLET: "3x9",
@@ -132,4 +133,10 @@ export const TILES = {
   CIABATTA_RIGHT: "17x4",
   CIABATTA_TELEPORT: "20x4",
   CIABATTA_BLAST: "6x3",
+  //Dead clown
+  DEAD_CLOWN_1: "14x9",
+  DEAD_CLOWN_2: "16x9",
+  DEAD_CLOWN_3: "18x9",
+  DEAD_CLOWN_4: "20x9",
+  DEAD_CLOWN_5: "22x9",
 };

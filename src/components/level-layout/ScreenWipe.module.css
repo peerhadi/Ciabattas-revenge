@@ -1,0 +1,24 @@
+.screenWipe {
+    position: absolute;
+    inset: 0;
+    background: #030b1e;
+    transform: translate3d(-100%,0,0);
+    transition: transform 1s ease-in;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+}
+
+
+.screenWipe.in {
+    transform: translate3d(0,0,0);
+}
+
+.screenWipe.out {
+    transform: translate3d(100%,0,0);
+}
+
+.levelNumberContainer {
+    scale: var(--pixel-size);
+}

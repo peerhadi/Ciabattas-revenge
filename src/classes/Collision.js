@@ -1,4 +1,4 @@
-import { PLACEMENT_TYPE_CONVEYOR, PLACEMENT_TYPE_ICE } from "@/helpers/consts";
+import { PLACEMENT_TYPE_CLOWN_DEFENSE_PICKUP, PLACEMENT_TYPE_CONVEYOR, PLACEMENT_TYPE_ICE, PLACEMENT_TYPE_ROAMING_ENEMY } from "@/helpers/consts";
 
 export class Collision {
   constructor(forBody, level, position = null) {
@@ -83,7 +83,7 @@ export class Collision {
     })
   }
 
-  withStealsInventory(){
+  withStealsInventory() {
     return this.placementsAtPosition.find((p) => {
       return p.stealsInventoryOnCollide(this.forBody)
     })

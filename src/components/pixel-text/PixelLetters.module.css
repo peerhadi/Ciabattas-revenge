@@ -1,0 +1,25 @@
+.letter {
+  display: block;
+  width: calc(4px * var(--pixel-size));
+  margin-right: calc(1px * var(--pixel-size));
+}
+
+.letter1 {
+  width: calc(1px * var(--pixel-size))
+}
+
+.letter2 {
+  width: calc(2px * var(--pixel-size))
+}
+
+.letter3 {
+  width: calc(3px * var(--pixel-size))
+}
+
+.letter5 {
+  width: calc(5px * var(--pixel-size))
+}
+
+.letter path {
+  stroke: #fff;
+}

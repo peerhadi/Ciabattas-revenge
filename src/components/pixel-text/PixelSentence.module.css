@@ -1,0 +1,15 @@
+.sentence {
+  display: flex;
+  position: relative;
+}
+
+.word {
+  display: flex;
+  margin-right: calc(2px * var(--pixel-size));
+  margin-bottom: calc(1px * var(--pixel-size));
+}
+
+.wordsContainer {
+  display: flex;
+  flex-wrap: wrap;
+}

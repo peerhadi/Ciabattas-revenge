@@ -112,11 +112,6 @@ const data = {
       y: 9
     },
     {
-      type: "WALL",
-      x: 2,
-      y: 12
-    },
-    {
       type: "FLOUR",
       x: 8,
       y: 11

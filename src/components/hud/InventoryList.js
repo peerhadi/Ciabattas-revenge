@@ -1,4 +1,4 @@
-import { PLACEMENT_TYPE_FIRE_PICKUP, PLACEMENT_TYPE_ICE_PICKUP, PLACEMENT_TYPE_WATER_PICKUP } from '@/helpers/consts';
+import { PLACEMENT_TYPE_CLOWN_DEFENSE_PICKUP, PLACEMENT_TYPE_FIRE_PICKUP, PLACEMENT_TYPE_ICE_PICKUP, PLACEMENT_TYPE_WATER_PICKUP } from '@/helpers/consts';
 import styles from './InventoryList.module.css';
 import { TILES } from '@/helpers/tiles';
 import MemoizedSprite from '../object-graphics/Sprite';
@@ -23,6 +23,11 @@ const showInventory = [
   {
     key: "KEY_GREEN",
     tile: TILES.GREEN_KEY
+  },
+
+  {
+    key: PLACEMENT_TYPE_CLOWN_DEFENSE_PICKUP,
+    tile: TILES.CLOWN_DEFENSE_PICKUP
   }
 ]
 
