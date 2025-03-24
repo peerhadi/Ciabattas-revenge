@@ -4,7 +4,7 @@ import styles from './RestartButton.module.css';
 export default function RestartButton({ level }) {
   return (
     <div className={styles.restartButton} >
-      <button className={styles.quietButton} onClick={() => level.restart()}>
+      <button className={styles.quietButton} onClick={() => level.restart(true)}>
         <MemoizedSprite frameCoord={TILES.RESTART_BUTTON} />
       </button>
     </div>

@@ -50,7 +50,7 @@ const showDeathType = (deathType) => {
 }
 export default function DeathMessage({ level }) {
   const handleRestartLevel = () => {
-    level.restart();
+    level.restart(true);
   }
   useKeyPress("Enter", () => {
     handleRestartLevel();

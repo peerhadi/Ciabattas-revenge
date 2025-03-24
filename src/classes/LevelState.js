@@ -23,7 +23,7 @@ export class LevelState {
     this.start()
   }
 
-  start() {
+  start(shouldStart) {
     this.isCompleted = false;
     this.deathOutcome = null;
     const levelData = Levels[this.id];
@@ -40,7 +40,7 @@ export class LevelState {
     this.camera = new Camera(this)
     this.clock = new Clock(90, this)
     this.startGameLoop()
-    this.running = !(Boolean(Levels[this.id].story));
+    this.running = shouldStart || !(Boolean(Levels[this.id].story));
     console.log(Levels[this.id].story)
   }
   startGameLoop() {
@@ -137,8 +137,8 @@ export class LevelState {
       closeStory: () => {
         this.closeStory();
       },
-      restart: () => {
-        this.start()
+      restart: (shouldStart) => {
+        this.start(shouldStart)
       }
     }
   }

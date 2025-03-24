@@ -1,4 +1,4 @@
-import { CreateButtonSvg, ElevatorButtonDown, ElevatorButtonSvg, ElevatorButtonUp, FloorTextSvg, JobTitle_CeoSvg, JobTitle_DirectorSvg, JobTitle_InternSvg, JobTitle_JuniorSvg, TitleButtonSvg } from "./ElevatorTextsvgs"
+import { CreateButtonSvg, CustomTextSvg, ElevatorBackplate, ElevatorButtonDown, ElevatorButtonSvg, ElevatorButtonUp, FloorTextSvg, JobTitle_CeoSvg, JobTitle_DirectorSvg, JobTitle_InternSvg, JobTitle_JuniorSvg, TitleButtonSvg } from "./ElevatorTextsvgs"
 import styles from './ElevatorHud.module.css'
 import React from "react"
 import useStore from "@/atoms/currentLevelidAtom"
@@ -12,34 +12,19 @@ export function ElevatorStructure() {
   )
 }
 export default function ElevatorHud({ level }) {
-  const [setCurrentId] = useStore((state) => [state.setCurrentLevelId]);
-  const isActive = (id) => id === level.title.substring(6, 9);
+  const floors = ['F_CUSTOM', 'F1', 'F2', 'F3', 'F4', 'F5']
+
   const [floor, setFloor] = React.useState('F' + level.title[6]);
 
   const handleLevelChange = (direction) => {
-    const currentFloor = parseInt(floor[1]);
-    const newFloor = direction === 'up' ? (currentFloor >= 5 ? 1 : currentFloor + 1) : (currentFloor <= 1 ? 5 : currentFloor - 1);
-    setFloor('F' + newFloor);
+    if (direction === 'up') {
+      console.log(floors[(floors.indexOf(floor))])
+      setFloor(floors[(floors.indexOf(floor) + 1) % 6]);
+    } else if (direction === 'down') {
+      setFloor(floors[(floors.indexOf(floor) - 1) % 6]);
+    }
   };
 
-  const handleButtonClick = (buttonNumber) => {
-    const levelId = "Level" + ((parseInt(floor[1]) - 1) * 9 + buttonNumber);
-    if (floor != 'F' + level.title[6] || (
-      level.music === SFX.MUSIC_BATTLE &&
-      Levels[levelId].musicTrack != SFX.MUSIC_BATTLE
-    ) || (
-        level.music != SFX.MUSIC_BATTLE &&
-        Levels[levelId].musicTrack === SFX.MUSIC_BATTLE
-      ))
-      soundsManager.stopSfx(level.music)
-    window.localStorage.setItem('currentLevelId', levelId)
-    setCurrentId(levelId);
-  };
-  const isCompleted = (buttonNumber) => {
-    const completedLevels = JSON.parse(window.localStorage.getItem('completedLevels'));
-    const levelId = "Level" + ((parseInt(floor[1]) - 1) * 9 + buttonNumber);
-    return completedLevels.includes(levelId);
-  }
   const progress = `${(JSON.parse(window.localStorage.getItem('completedLevels')).length / 45) * 100}`
   let jobTitle;
   if (progress < 25) {
@@ -65,28 +50,21 @@ export default function ElevatorHud({ level }) {
       </div>
       <div className={styles.elevatorBody}>
         <div className={styles.floorSVG}>
-          <FloorTextSvg floor={floor} />
+    {floor === 'F_CUSTOM' ? <CustomTextSvg floor={floor}/> : <FloorTextSvg floor={floor} />}
         </div>
         <button className={`${styles.elevatorButtonUp} ${styles.button}`} disabled={floor[1] === '5'} style={{
           opacity: `${floor[1] === '5' ? '0.1' : '1'}`
         }} onClick={() => handleLevelChange('up')}>
           <ElevatorButtonUp />
         </button>
-        <button className={`${styles.elevatorButtonDown} ${styles.button}`} disabled={floor[1] === '1'} style={{
-          opacity: `${floor[1] === '1' ? '0.1' : '1'}`
+        <button className={`${styles.elevatorButtonDown} ${styles.button}`} disabled={floor[1] === '_'} style={{
+          opacity: `${floor[1] === '_' ? '0.1' : '1'}`
         }} onClick={() => handleLevelChange('down')}>
           <ElevatorButtonDown />
         </button>
 
         <RenderElevatorMinimap floor={floor} />
-        {[...Array(9)].map((_, index) => {
-          const buttonNumber = index + 1;
-          return (
-            <button key={buttonNumber} className={`${styles[`button${buttonNumber}`]} ${styles.button}`} onClick={() => handleButtonClick(buttonNumber)}>
-              <ElevatorButtonSvg floor={floor} number={buttonNumber} isActive={isActive(`${floor[1]}-${buttonNumber}`)} isCompleted={isCompleted(buttonNumber)} />
-            </button>
-          );
-        })}
+        <RenderElevatorButtons floor={floor} level={level} />
         <button className={`${styles.createButton} ${styles.button}`}>
           <CreateButtonSvg />
         </button>
@@ -96,6 +74,55 @@ export default function ElevatorHud({ level }) {
       </div>
     </div>
   );
+}
+const RenderElevatorButtons = ({ floor, level }) => {
+  const [setCurrentId] = useStore((state) => [state.setCurrentLevelId]);
+  const isActive = (id) => id === level.title.substring(6, 9);
+  const handleButtonClick = (buttonNumber) => {
+    const levelId = "Level" + ((parseInt(floor[1]) - 1) * 9 + buttonNumber);
+    if (floor != 'F' + level.title[6] || (
+      level.music === SFX.MUSIC_BATTLE &&
+      Levels[levelId].musicTrack != SFX.MUSIC_BATTLE
+    ) || (
+        level.music != SFX.MUSIC_BATTLE &&
+        Levels[levelId].musicTrack === SFX.MUSIC_BATTLE
+      ))
+      soundsManager.stopSfx(level.music)
+    window.localStorage.setItem('currentLevelId', levelId)
+    setCurrentId(levelId);
+  };
+  const isCompleted = (buttonNumber) => {
+    const completedLevels = JSON.parse(window.localStorage.getItem('completedLevels'));
+    const levelId = "Level" + ((parseInt(floor[1]) - 1) * 9 + buttonNumber);
+    return completedLevels.includes(levelId);
+  }
+  return floor != 'F_CUSTOM' ? (
+    <>
+      {
+        [...Array(9)].map((_, index) => {
+          const buttonNumber = index + 1;
+          return (
+            <button key={buttonNumber} className={`${styles[`button${buttonNumber}`]} ${styles.button}`} onClick={() => handleButtonClick(buttonNumber)}>
+              <ElevatorButtonSvg floor={floor} number={buttonNumber} isActive={isActive(`${floor[1]}-${buttonNumber}`)} isCompleted={isCompleted(buttonNumber)} />
+            </button>
+          );
+        })
+      }
+    </>) : (
+    <div
+      style={{
+        position: "absolute",
+        left: `calc(3px * var(--elevator-menu-pixel-size)`,
+        right: `calc(3px * var(--elevator-menu-pixel-size)`,
+        top: `calc(19px * var(--elevator-menu-pixel-size)`,
+        height: `calc(49px * var(--elevator-menu-pixel-size)`,
+        overflowY: "scroll",
+        borderTop: `calc(1px * var(--elevator-menu-pixel-size)) solid #000`,
+        background: "rgb(37, 31, 39)",
+      }}
+    >
+    </div>
+  )
 }
 
 const RenderElevatorMinimap = ({ floor }) => {
